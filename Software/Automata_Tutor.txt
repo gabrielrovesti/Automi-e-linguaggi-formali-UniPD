@@ -1,0 +1,9 @@
+https://automata-tutor.model.in.tum.de/main/index
+
+Per accedere agli esercizi occorre:
+
+registrarsi sul sito per ottenere un account
+nella pagina principale del proprio account, scegliere "Courses"
+inserire le seguenti informazioni nel form "Enroll in course
+Course ID:	Automi@Unipd 21/22
+Password:	XP4SP4PL
