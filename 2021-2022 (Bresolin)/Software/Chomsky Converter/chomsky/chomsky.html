@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>
+            Convertitore da CFL a CNF
+        </title>
+        <link rel="stylesheet" type="text/css" href="algorithm.css">
+        <meta name="viewport" content="width=device-width, user-scalable=yes" />
+        <meta charset="utf-8"/> 
+    </head>
+    <body>
+        <h2>
+            Convertitore da CFL a Forma normale di Chomsky
+        </h2>
+        Questo convertitore è stato creato a partire dalla costruzione data nel <b>Teorema 2.9</b> (pagina 109) of <i>Introduction to the Theory of Computation</i> di Michael Sipster.
+        Converte un CFL in un linguaggio equivalente in forma normale di Chomsky.
+        <p>
+            <i>
+                Versione offline ottenuta da:
+                <a href="https://jayd.ml/algorithms/chomsky.html">Context Free Language to Chomsky Normal Form Converter.
+                </a>
+                All code is MIT licensed, and everything else is CC BY-SA 4.0.
+            </i>
+        </p>
+        
+        <h3>
+            Inserisci un CFL da convertire.
+        </h3>
+        <i>Le lettere maiuscole sono considerate variabili/non terminali, qualsiasi altro simbolo è considerato un terminale (lettere minuscole, numeri, simboli, ecc).</i>
+        <i>Il convertitore non farà alcun tentativo di convalidare l'input o di gestire gli errori.</i>
+        <p>Qui c'è l'epsilon: ε</p>
+        <div>
+            <textarea id="language-input"
+                      autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" >
+S -> AB
+A -> B
+B -> aBb | ε
+</textarea>
+        </div>
+        <div>
+            <button id="calculate-button">Calcola</button> 
+        </div>
+        <div id="results">
+        </div>
+        <script src="chomsky.js"></script> 
+    </body>
+</html>

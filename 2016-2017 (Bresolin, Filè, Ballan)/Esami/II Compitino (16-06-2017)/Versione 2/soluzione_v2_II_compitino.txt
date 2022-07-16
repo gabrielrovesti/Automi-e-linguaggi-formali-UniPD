@@ -1,0 +1,172 @@
+#############################################################
+#                                                           #
+#               II Compitino Automi - V2                    #
+#               (Soluzione non ufficiale)                   #
+#                                                           #
+#############################################################
+
+------------
+Esercizio 1
+------------
+
+E' la TM della sottrazione propria, vista a lezione
+m - n = max(m-n,0)
+
+------------
+Esercizio 2
+------------
+
+La seguente TM accetta il linguaggio costituito dalle stringhe con diverso numero di 0 e 1.
+
+; This example program checks if the input string has a different numbers of zeros and ones
+; Input: a string of 0's and 1's, eg '1001001'
+
+
+; Machine starts in state 0.
+
+; State 0: read the first symbol
+0 Y Y r 0
+0 0 X r 1
+0 1 X r 3
+
+; State 1: 
+
+1 Y Y r 1
+1 0 0 r 1
+1 1 Y l 2
+1 _ _ r 5
+
+; State 2: 
+
+2 0 0 l 2
+2 1 1 l 2
+2 Y Y l 2
+2 X X r 0
+
+; State 3: 
+
+3 Y Y r 3
+3 1 1 r 3
+3 0 Y l 4
+3 _ _ r 5
+
+; State 4: 
+
+4 0 0 l 4
+4 1 1 l 4
+4 Y Y l 4
+4 X X r 0
+
+; State q5:
+5 * * * halt-accept
+
+------------
+Esercizio 3
+------------
+
+a) (q0)1100 |- X(q3)100 |-X1(q3)00 |- X(q4)1Y0 |- (q4)X1Y0 |- X(q0)1Y0 |- XX(q3)Y0 |- XXY(q3)0 |- XX(q4)YY |- X(q4)XYY |- (q0)XXYY bloccata
+b) (q0)01100 |- X(q1)1100 |- (q2)XY100 |- X(q0)Y100 |- XY(q0)100 |- XYX(q3)00 |- XY(q4)XY0 |- XYX(q0)Y0 |- XYXY(q0)0 |- XYXYX(q1)B |- XYXYXB(q5)B accettata
+c) (q0)10110 |- X(q3)0110 |- (q4)XY110 |- X(q0)Y110 |- XY(q0)110 |- XYX(q3)10 |- XYX1(q3)0 |- XYX(q4)1Y |- XY(q4)X1Y |- XYX(q0)1Y |- XYXX(q3)Y |- XYXXY(q3)B |- XYXXYB(q5)B accettata  
+
+------------
+Esercizio 4
+------------
+
+a)           A      B
+    1        01     010
+    2        100    00
+    3        010    100
+    
+    Iniziamo per forza con 1, sennò le stringhe non combaciano, otteniamo:
+    wa = 01
+    wb = 010
+    
+    Ora dobbiamo generare uno 0 in wa, quindi scegliamo o 1 o 3
+    wa = 0101
+    wb = 010010
+    
+    Ma scegliendo 1 non combaciano, quindi scegliamo 3
+    
+    wa = 01010
+    wb = 010100
+    
+    Siamo tornati nella situazione di prima -> c'è un loop -> questo PCP non ha soluzione.
+    
+b)          A       B
+    1       xy      yz
+    2       x       xy
+    3       yz      zx
+    4       z       x
+    
+    Dobbiamo cominciare per forza usando 2, sennò le stringhe non combaciano, otteniamo:
+    wa = x
+    wb = xy
+    
+    Ora dobbiamo generare una y in wa possiamo farlo solo usando 3
+    wa = xyz
+    wb = xyzx
+    
+    Ora dobbiamo generare una x in wa possiamo farlo usando 1 o 2, ma se usiamo 2 dovremmo generare in wa
+    2 lettere quindi non sarebbe più possibile farle combaciare, quindi usiamo 1
+    wa = xyzxy
+    wb = xyzxyz
+    
+    Ora dobbiamo generare una z in wa possiamo farlo usando per forza 4
+    wa = xyzxyz
+    wb = xyzxyzx
+    
+    Siamo tornati nel caso in cui dobbiamo generare una x -> c'è un loop -> questo PCP non ha soluzione.
+    
+c)          A         B
+    1       10        100
+    2       110       01
+    3       01        11
+    
+    Dobbiamo per forza partire usando 1, sennò le stringhe non combaciano, otteniamo:
+    wa = 10
+    wb = 100
+    
+    Ora dobbiamo generare uno 0 in wa, possiamo farlo solo usando 3
+    wa = 1001
+    wb = 10011 
+    
+    Ora dobbiamo generare un 1 in wa, possiamo farlo usando 1 o 2, proviamo con 2
+    wa = 1001110
+    wb = 1001101
+
+    Le stringhe non combaciano, allora niente, riproviamo con 1
+    wa = 100110
+    wb = 10011100
+
+    Le stringhe non combaciano ancora -> PCP non ha soluzione.
+    
+    
+------------
+Esercizio 5
+------------
+
+a) I linguaggi RE includono i linguaggi ricorsivi (si veda la figura delle slide).
+b) CSAT è il problema di soddisfacibilità delle espressioni booleane in CNF; cioè per quali valori di input una data espressione 
+booleana in CNF restituirà TRUE come output; CSAT è NP completo 
+
+------------
+Esercizio 6
+------------
+
+P = classe di problemi risolvibili in tempo polinomiale da una TM deterministica
+NP = classe di problemi risolvibili in tempo polinomiale da una TM non deterministica
+
+NP completi = classe di problemi tale che:
+1) P' è un problema appartenente ad NP
+2) Ogni problema P'' Np completo può essere ridotto a P'
+
+------------
+Esercizio 7
+------------
+
+a Vero, a patto che nelle clausole compaiano letterali diversi.
+b Falso. Lo sarebbe se gli and e gli or fossero invertiti.
+c Falso. Ld è definito come l'insieme delle stringhe wi tali che wi non è il L(Mi)
+d Vero.
+e Vero.
+

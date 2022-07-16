@@ -1,0 +1,9 @@
+Suppose in a graph G there is one pebble on each vertex except one vertex v with p(v)=2,
+then above pebbling problem has solution on G iff G has a Hamiltonian circuit. It's easy to check if there
+is a Hamiltonian circuit, then there is a solution for pebbling on G. On the other hand, in any solution
+to the pebbling, we should start from vertex v. Suppose that we visit some vertex u twice such that this u
+is the first vertex which visited twice in G by pebbling algorithm, then we have a loop which starts from u
+and ends in u and finally because u is the first for making loop then we have p(u)=1 so we cannot continue
+pebbling algorithm. Indeed if the algorithm has a solution then we have u=v which means we found a Hamiltonian
+circuit which 
+starts in v.

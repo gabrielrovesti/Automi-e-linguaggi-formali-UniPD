@@ -1,0 +1,35 @@
+; This example program checks if the input string has the same number of 0 and 1
+; Input: a string with the same number of 0's and 1's, eg '01','0011','000111',...
+; Use this example in http://morphett.info/turing/turing.html
+; Machine starts in state 0.
+
+; State 0: read the leftmost symbol, change 0 in X, move right and search for 1 or
+; change 1 in X, move right and search for 0
+
+0 0 X r 1
+0 Y Y r 0
+0 1 X r 4
+0 _ _ r 3
+
+; State q1: move right if 0 or Y until 1; once 1 is found change in Y and move
+left
+
+1 0 0 r 1
+1 Y Y r 1
+1 1 Y l 2
+
+; State q2: move left if 0 or 1 or Y until X and then iterate again
+2 0 0 l 2
+2 Y Y l 2
+2 1 1 l 2
+2 X X r 0
+
+; State q4: move right if 1 or Y until 0; once 0 is found change in Y and move
+left
+4 Y Y r 4
+4 1 1 r 4
+4 0 Y l 2
+
+; State q3:
+3 * * * halt-accept
+

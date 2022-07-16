@@ -1,0 +1,19 @@
+-- PARTE 1 --
+ES 1a: 5 punti
+ES 1b: 6 punti
+ES 2a: 7 punti
+ES 2b: 4 punti
+ES 3 : 4 punti
+ES 4a: 3 punti
+ES 4b: 2 punti
+ES 4c: 1 punto 
+
+
+-- PARTE 2 --
+ES 1 : 8 punti
+ES 2 : 8 punti
+ES 3 : 5 punti
+ES 4 : 5 punti
+ES 5a: 2 punti
+ES 5b: 3 punti 
+ES 5c: 1 punto

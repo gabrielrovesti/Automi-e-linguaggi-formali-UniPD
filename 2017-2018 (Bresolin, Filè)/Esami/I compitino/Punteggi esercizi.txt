@@ -1,0 +1,8 @@
+es   1: 4  punti
+es   2: 8  punti
+es   3: 7  punti
+es   4: 4  punti
+es  5a: 2  punti
+es  5b: 5  punti
+es  5C: 3  punti
+TOTALE: 33 punti

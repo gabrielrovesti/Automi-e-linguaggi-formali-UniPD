@@ -1,0 +1,13 @@
+Es 2
+
+La differenza tra i due PL sta nel fatto che nel PL per CF devi considerare che il "pezzo" che pompi possa essere preceduto da u. Quindi devi valutare che vwx, a differenza di xy (del PL dei regolari) possa iniziare in qualunque punto della stringa.
+
+z=0^n1^n non è reg perché pompi solo zeri e non 1. Non puoi dire non sia CF perché se prendi vwx = 0^p1^p, e pompi vwx rimani nel linguaggio. In altri termini puoi scegliere z=0^f0^p1^p1^f dove u=0^f vwx=0^p1^p y=1^f
+
+Es. 5
+(1) Essendo SetPartition in altre parole trovare {(S1, S2) | sum S1 = sum S2 }, dati i due insiemi e sommando gli elementi si puo' verificare in tempo polinomiale (O(n)) ch la soluzione è corretta. Certificato (S1, S2). Quindi SetPartition è NP.
+
+(2) Sapendo che SubsetSum è NP-Completo, posso usare SetPartitioning nel seguente modo per risolvere SubsetSum, costruendo dall'input (S, t) un insieme S1 = S U {s+t, 2s-t} dove s è la somma degli elementi in S.
+Applicando SetParitioning ottengo dunque che
+  1. se c'è una sottolista propria di S,  A la cui somma è t, allora S1 sarà partizionato in S1 U {2s - t} e  S \ S1 U {s + t}. Infatti la somma della prima partizione sarebbe t + (2s - t) = 2s e della seconda (s - t) + (s + t) = 2s
+  2. se S1 può essere partizionato allora c'è una sottolista di S la cui somma è t. Infatti, dato che (s + t) + (2s - t) = 3s e ogni parte è 2s, i due elementi appartengono a parti differenti. Se {2s - t} in una delle due partizioni, A, il resto degli elementi di A sommati danno infatti t.

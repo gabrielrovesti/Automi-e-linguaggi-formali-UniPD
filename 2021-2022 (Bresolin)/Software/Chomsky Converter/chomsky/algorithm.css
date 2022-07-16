@@ -1,0 +1,46 @@
+table {
+    border-collapse : collapse;
+}
+
+table, th, td {
+    font-family: monospace;
+    border: .1em solid;
+}
+
+.row-header {
+    font-weight: bold;
+}
+
+td, td {
+    padding-left : .5em;
+    padding-right : .5em;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, Helvetica, sans-serif;
+}
+
+#matrix-input, #heuristic-input {
+    height : 10em;
+    width : 10em;
+}
+
+#language-input, #edges-input {
+    height : 10em;
+    width : 20em;
+}
+
+#heuristic {
+    display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: #eee;
+    background: #121212;
+  }
+
+  body a {
+    color: #809fff;
+  }
+}

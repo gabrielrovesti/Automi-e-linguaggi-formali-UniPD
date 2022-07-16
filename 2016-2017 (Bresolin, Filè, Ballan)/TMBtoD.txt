@@ -1,0 +1,97 @@
+; This example program converts a decimal number in unitary 
+; Input: a string in decimal notation, eg '1','5','2',...
+; Use this example in http://morphett.info/turing/turing.html
+; Machine starts in state 0.
+
+; State q0: 
+
+0 0 0 r 0
+0 1 1 r 0
+0 _ _ l 1
+
+; State q1: 
+
+1 0 0 l 1
+1 1 Y r 2
+1 _ _ r 11
+
+; State q2: 
+
+2 0 X r 3
+2 _ _ r 8
+
+; State q3: 
+
+3 Y X r 3
+3 X 0 r 3
+3 0 X r 3
+3 _ _ r 4
+
+; State q4: 
+
+4 0 0 r 4
+4 _ 0 r 12
+
+; State q5: 
+
+5 0 0 l 5
+5 _ _ l 6
+
+; State q6: 
+
+6 Y Y l 6
+6 X Y l 7
+6 0 0 l 6
+6 _ _ l 13
+
+; State q7:
+
+7 Y Y l 14
+7 X Y r 3
+7 _ _ l 14
+7 0 X r 3
+7 1 X r 3
+
+; State q8:
+
+8 0 0 r 8
+8 _ 0 l 9
+
+; State q9:  
+
+9 0 0 l 9
+9 Y Y l 9
+9 _ _ l 10
+
+; State q10: 
+ 
+10 X X l 10
+10 Y Y l 10
+10 0 0 l 10
+10 1 Y r 3
+10 _ _ r 11 
+
+; State q11:
+11 * * * halt-accept
+
+; State q12:
+12 _ 0 r 5
+
+; State q13:
+13 X Y r 7
+13 Y Y l 7
+13 _ _ l 11
+
+; State q14:
+14 Y Y l 15
+14 X Y l 15
+14 _ _ l 11
+14 1 Y r 3
+14 0 X r 3
+
+; State q15:
+15 Y Y l 15
+15 _ _ l 11
+15 X Y r 3
+15 1 Y r 3
+15 0 Y l 15
